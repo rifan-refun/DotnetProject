@@ -1,0 +1,12 @@
+<div class="card bg-base-100 w-1/2 mx-auto p-10 mt-10 shadow-xl">
+    <h1 class="text-2xl font-bold text-red-500 mb-4">{{title}}</h1>
+    <ul class="list bg-base-100 rounded-box">
+        @for (member of members(); track member.id; let last = $last){
+            <li class="list-row items-center py-3 px-4 {{ !last ? 'border-b-2 border-black' : '' }}">
+                <img src="/user.png" alt="user avatar" class="size-12 rounded-box">
+                <div>{{member.userName}}</div>
+            </li>
+        }
+    </ul>   
+</div>
+<router-outlet></router-outlet>
