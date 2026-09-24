@@ -15,7 +15,12 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
+builder.Services.AddCors();
+
 var app = builder.Build();
+
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().
+    WithOrigins("http://localhost:4200","https://localhost:4200")); // untuk mengatur CORS agar bisa diakses dari localhost:4200 (Angular app)
 
 app.MapControllers();
 
