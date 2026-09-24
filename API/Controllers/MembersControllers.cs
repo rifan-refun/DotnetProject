@@ -1,5 +1,4 @@
-using System.Collections.Generic;
-using System.Linq;
+//pengatur route API, untuk mengatur route API dan membuat webapp serta service seperti middleware
 using API.Data;
 using API.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -7,9 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class  MembersController(AppDbContext context) : ControllerBase
+    public class  MembersController(AppDbContext context) : BaseApiController
     {
         [HttpGet]
         public async Task<ActionResult<IReadOnlyList<AppUser>>> GetMembers()

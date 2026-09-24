@@ -11,5 +11,10 @@ namespace API.Entities
         // UserName untuk menyimpan nama user. Required untuk menandakan bahwa property ini wajib diisi. kalo mau opsional, ganti required jadi nullable string (string?).
         public required string Emails { get; set; }
         // Emails untuk menyimpan email user. Required untuk menandakan bahwa property ini wajib diisi.
+        public byte[] PasswordHash { get; set; }
+        // PasswordHash untuk menyimpan hash dari password user. Tipe data byte[] karena hash biasanya berupa array byte.
+        public byte [] PasswordSalt { get; set; }
+        // PasswordSalt untuk menyimpan salt dari password user. Tipe data byte[] karena salt
+        
     }
 }
