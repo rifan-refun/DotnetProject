@@ -13,10 +13,11 @@ namespace API.DTOs
 
         [Required]
         [EmailAddress]
-        [MinLength(4)]
+        
         public  string Emails {get; set;} =""; 
 
         [Required]
+        [MinLength(4)]
         public  string Password {get; set;} =""; 
     }
 }
